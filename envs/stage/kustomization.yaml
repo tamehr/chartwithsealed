@@ -6,7 +6,6 @@ resources:
 
 helmCharts:
   - name: my-nginx             # 
-    includeConfigs: true
     releaseName: nginx-release
     version: 0.1.0
     path: ../../charts/nginx    # 
