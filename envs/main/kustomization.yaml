@@ -1,7 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
 resources:
   - ../../secrets/nginx-secret.yaml
 
 helmCharts:
-  - name: nginx
-    path: ../../charts/nginx
+  - name: my-nginx             # 
+    includeConfigs: true
+    releaseName: nginx-release
+    version: 0.1.0
+    path: ../../charts/nginx    # 
     valuesFile: values.yaml
