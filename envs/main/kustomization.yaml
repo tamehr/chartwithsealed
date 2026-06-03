@@ -1,0 +1,7 @@
+resources:
+  - ../../secrets/nginx-secret.yaml
+
+helmCharts:
+  - name: nginx
+    path: ../../charts/nginx
+    valuesFile: values.yaml
