@@ -4,9 +4,11 @@ kind: Kustomization
 resources:
   - ../../secrets/nginx-secret.yaml
 
+helmGlobals:
+  chartHome: ../../charts
+
 helmCharts:
-  - name: my-nginx             # 
+  - name: nginx
     releaseName: nginx-release
-    version: 0.1.0
-    path: ../../charts/nginx    # 
+    chart: nginx
     valuesFile: values.yaml
