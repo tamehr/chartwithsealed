@@ -7,9 +7,12 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/tamehr/chartwithsealed.git
+    repoURL: https://github.com/USERNAME/chartwithsealed.git
     targetRevision: main
     path: envs/stage
+
+    kustomize:
+      enableHelm: true
 
   destination:
     server: https://kubernetes.default.svc
@@ -19,5 +22,3 @@ spec:
     automated:
       prune: true
       selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
