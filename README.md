@@ -24,7 +24,7 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 kubectl wait deploy -n argocd --all --for condition=Available --timeout=2m
 
 kubectl get pods -n argocd
-
+kubectl annotate app nginx-stage -n argocd argocd.argoproj.io/refresh=hard --overwrite
 kubectl -n argocd get secret argocd-initial-admin-secret \
 -o jsonpath="{.data.password}" | base64 -d
 
