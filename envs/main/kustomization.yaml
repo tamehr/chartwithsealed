@@ -12,5 +12,4 @@ helmGlobals:
 helmCharts:
   - name: nginx
     releaseName: nginx
-    chart: nginx
     valuesFile: values.yaml
