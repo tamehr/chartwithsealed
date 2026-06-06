@@ -4,7 +4,7 @@ kind: Kustomization
 namespace: main
 
 resources:
-  - ../../secrets/nginx-secret.yaml
+  - nginx-secret.yaml
 
 helmGlobals:
   chartHome: ../../charts
