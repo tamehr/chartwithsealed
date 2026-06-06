@@ -37,6 +37,7 @@ kubectl port-forward --address 0.0.0.0 -n argocd svc/argocd-server 8080:80
 --------------------------------------
 
 راه 2: NodePort
+
 kubectl patch svc argocd-server -n argocd -p '{"spec":{"type":"NodePort"}}'
 
 kubectl get svc argocd-server -n argocd
