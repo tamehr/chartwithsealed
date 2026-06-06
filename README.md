@@ -99,7 +99,7 @@ kubectl port-forward --address 0.0.0.0 svc/argocd-server -n argocd 8080:443
 kubectl get secret nginx-secret -n main \
 -o jsonpath='{.data.password}' | base64 -d
 --------------------------
-5. ترتیب اعمال Secret و Helm
+# ترتیب اعمال Secret و Helm
 
 Kustomize همه چیز را با هم رندر می‌کند، اما اگر Deployment داخل Chart به Secret وابسته باشد، معمولاً مشکلی پیش نمی‌آید چون Kubernetes همه Manifestها را در یک Sync دریافت می‌کند.
 
