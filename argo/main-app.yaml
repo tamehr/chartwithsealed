@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/tamehr/chartwithsealed.git
     targetRevision: main
-    path: envs/stage
+    path: envs/main
 
     kustomize:
       enableHelm: true
