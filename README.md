@@ -63,7 +63,7 @@ kubectl get configmap argocd-cm -n argocd \
   -o jsonpath='{.data.kustomize\.buildOptions}'
 # Output: --enable-helm
 
-#restart repo-server after Patch 
+#check repo-server after Patch 
 kubectl rollout status deployment/argocd-repo-server -n argocd
 
 kubectl get pods -n argocd | grep repo
