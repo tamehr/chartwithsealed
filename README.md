@@ -18,14 +18,30 @@ repo
     └─ main
         ├─ kustomization.yaml
         └─ values.yaml
+        
 kubectl create namespace argocd       
+
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
 kubectl wait deploy -n argocd --all --for condition=Available --timeout=2m
+-----------------------
+argo بدون tls برای اجرا در killerkoda
+
+kubectl -n argocd patch configmap argocd-cmd-params-cm \
+  --type merge \
+  -p '{"data":{"server.insecure":"true"}}'
+
+kubectl rollout restart deployment argocd-server -n argocd
+
+kubectl port-forward --address 0.0.0.0 -n argocd svc/argocd-server 8080:80
+--------------------------------------
 
 kubectl get pods -n argocd
+
 kubectl annotate app nginx-stage -n argocd argocd.argoproj.io/refresh=hard --overwrite
+
 kubectl describe app nginx-stage -n argocd | tail -n 20
+
 kubectl -n argocd get secret argocd-initial-admin-secret \
 -o jsonpath="{.data.password}" | base64 -d
 
