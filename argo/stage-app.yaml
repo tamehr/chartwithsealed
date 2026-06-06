@@ -7,7 +7,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/USERNAME/chartwithsealed.git
+    repoURL: https://github.com/tamehr/chartwithsealed.git
     targetRevision: main
     path: envs/stage
 
